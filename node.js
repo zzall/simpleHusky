@@ -10,27 +10,13 @@ const content = fs.readFileSync(path.resolve(__dirname, 'package.json'), {
   encoding: 'utf8'
 })
 
-const preCommitContent = `
-#! /usr/bin/env node
-
-const child_process = require('child_process')
-
-console.log('我还是pre-commit-新增的')
-
-child_process.exec('npm run test2',(err)=>{
-  if(err){
-    return console.log('err',err)
-  }
-  console.log('hhhh')
-})
-`
 console.log('content', path.resolve(__dirname, '.test2', 'pre-commit'));
 
 const nodePreCommitContent = `#! /usr/bin/env node
 
 const child_process = require('child_process')
 
-console.log('我还是pre-commit')
+console.log('我还是pre-commit-新增的')
 
 child_process.exec('${packageJSON.zzzgithooks['pre-commit']}',(err)=>{
   if(err){
