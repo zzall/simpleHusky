@@ -29,7 +29,16 @@ console.log('content',  path.resolve(__dirname, '.test2','pre-commit'));
 const nodePreCommitContent = `
 #! /usr/bin/env node
 
-${packageJSON.zzzgithooks['pre-commit']}
+const child_process = require('child_process')
+
+console.log('我还是pre-commit')
+
+child_process.exec('${packageJSON.zzzgithooks['pre-commit']}',(err)=>{
+  if(err){
+    return console.log('err',err)
+  }
+  console.log('hhhh')
+})
 
 `
 
