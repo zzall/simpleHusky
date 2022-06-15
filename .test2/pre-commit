@@ -2,9 +2,9 @@
 
 const child_process = require('child_process')
 
-console.log('我还是pre-commit2')
+console.log('我还是pre-commit3')
 
-child_process.exec('npm run test3',(err)=>{
+child_process.exec('npm run test2',(err)=>{
   if(err){
     return console.log('err',err)
   }
