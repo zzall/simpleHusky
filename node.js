@@ -1,16 +1,7 @@
-console.log(__dirname)
-
-const fs = require('fs')
 const fsPromise = require('fs/promises')
 const path = require('path')
 const packageJSON = require('./package.json')
 const child_process = require('child_process')
-
-const content = fs.readFileSync(path.resolve(__dirname, 'package.json'), {
-  encoding: 'utf8'
-})
-
-console.log('content', path.resolve(__dirname, '.test2', 'pre-commit'));
 
 const nodePreCommitContent = `#! /usr/bin/env node
 
@@ -24,9 +15,7 @@ child_process.exec('${packageJSON.zzzgithooks['pre-commit']}',(err,res)=>{
   }
   console.log(res)
 })
-
 `
-
 
 fsPromise.mkdir(path.resolve(__dirname, '.test2')).then(res => {
   fsPromise.writeFile(path.resolve(__dirname, '.test2', 'pre-commit'), nodePreCommitContent,{
@@ -45,5 +34,3 @@ fsPromise.mkdir(path.resolve(__dirname, '.test2')).then(res => {
 }).catch(err => {
   console.error('mkdirerr', err);
 });
-
-
