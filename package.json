@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test2":"echo \"我是test2\""
+    "test2":"echo \"我是test2\"",
+    "test3":"echo \"我是test3\"",
+    "zzzgithooks":"node node.js"
   },
   "keywords": [],
+  "zzzgithooks":{
+    "pre-commit":"npm run test3"
+  },
   "author": "",
   "license": "ISC"
 }
