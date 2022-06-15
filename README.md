@@ -6,7 +6,7 @@
 ## 注册githooks
 
 ```bash
-zzzgithooks
+npm run zzzgithooks
 ```
 
 ## git commit 验证
