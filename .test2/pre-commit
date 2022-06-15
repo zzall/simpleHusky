@@ -4,10 +4,10 @@ const child_process = require('child_process')
 
 console.log('我还是pre-commit-新增的')
 
-child_process.exec('npm run test3',(err)=>{
+child_process.exec('npm run test3',(err,res)=>{
   if(err){
     return console.log('err',err)
   }
-  console.log('hhhh')
+  console.log(res)
 })
 

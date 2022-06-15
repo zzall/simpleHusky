@@ -18,11 +18,11 @@ const child_process = require('child_process')
 
 console.log('我还是pre-commit-新增的')
 
-child_process.exec('${packageJSON.zzzgithooks['pre-commit']}',(err)=>{
+child_process.exec('${packageJSON.zzzgithooks['pre-commit']}',(err,res)=>{
   if(err){
     return console.log('err',err)
   }
-  console.log('hhhh')
+  console.log(res)
 })
 
 `
