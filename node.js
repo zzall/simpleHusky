@@ -47,7 +47,7 @@ fsPromise.mkdir(path.resolve(__dirname, '.test2')).then(res => {
     flag:'w+'
   }).then(res => {
     console.log('pre-commit-res', res);
-    child_process.exec(`git config core.hooksPath ${path.resolve(__dirname, '.test2', 'pre-commit')}`, (err) => {
+    child_process.exec(`git config core.hooksPath ${path.resolve(__dirname, '.test2')} && chmod +x ${path.resolve(__dirname, '.test2', 'pre-commit')}`, (err) => {
       if (err) {
         return console.log('err', err)
       }
