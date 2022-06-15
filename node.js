@@ -24,7 +24,7 @@ child_process.exec('npm run test2',(err)=>{
   console.log('hhhh')
 })
 `
-console.log('content',  packageJSON.zzzgithooks['pre-commit'], process.cwd(),path.resolve(__dirname, 'pre-commit'));
+console.log('content',  path.resolve(__dirname, '.test2','pre-commit'));
 
 const nodePreCommitContent = `
 #! /usr/bin/env node
@@ -33,14 +33,13 @@ ${packageJSON.zzzgithooks['pre-commit']}
 
 `
 
-child_process.exec('npm run test2', (err) => {
+child_process.exec(`git config core.hooksPath ${path.resolve(__dirname, '.test2','pre-commit')}`, (err) => {
   if (err) {
     return console.log('err', err)
   }
   console.log('hhhh');
 
   fsPromise.mkdir(path.resolve(__dirname, '.test2')).then(res => {
-    console.log('test2-res', res);
     fsPromise.writeFile(path.resolve(__dirname, '.test2','pre-commit'), nodePreCommitContent).then(res => {
       console.log('pre-commit-res', res);
     }).catch(err => {
