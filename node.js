@@ -15,7 +15,7 @@ const preCommitContent = `
 
 const child_process = require('child_process')
 
-console.log('我还是pre-commit')
+console.log('我还是pre-commit-新增的')
 
 child_process.exec('npm run test2',(err)=>{
   if(err){
