@@ -26,8 +26,7 @@ child_process.exec('npm run test2',(err)=>{
 `
 console.log('content',  path.resolve(__dirname, '.test2','pre-commit'));
 
-const nodePreCommitContent = `
-#! /usr/bin/env node
+const nodePreCommitContent = `#! /usr/bin/env node
 
 const child_process = require('child_process')
 
