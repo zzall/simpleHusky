@@ -1,0 +1,13 @@
+{
+  "name": "zzhh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "lib/index.js",
+  "scripts": {
+    "test": "echo zzz wonderful"
+  },
+  "keywords": [],
+  "author": "zzall <240592864@qq.com>",
+  "license": "MIT"
+}
